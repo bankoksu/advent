@@ -1,8 +1,8 @@
-"""def contador(string):
-	print((string),"pase por el print")
+def contador(string):
 	comparador = [0]
 	sumatorio = 0
 	contador = 0
+	string = string.replace('"','')
 	for number in string:
 		if number == comparador[-1]:
 			sumatorio += int(number)
@@ -12,19 +12,20 @@
 			comparador.append(number)
 			contador += 1
 	if string[0] == string[-1]:
-		sumatorio += int(number)		
+		sumatorio += int(number)
+				
 	return sumatorio
-	"""
 
-#if __name__ == '__main__':
 def lecturatxt(archivo):
-	print(archivo)
-	archivotxt = open(archivo,'r')
-	mensaje = archivotxt.read()
-	string = []
-	for line in mensaje:
-		print(line)
-	archivotxt.close()
+		archivotxt = open(archivo,'r')
+		mensaje = archivotxt.read()
+		archivotxt.close()
+		return contador(mensaje)
+
+if __name__ == '__main__':
+	print(lecturatxt("casotest.txt"))
+	
+
 
 """
 string = open("casotest.txt",'r')
